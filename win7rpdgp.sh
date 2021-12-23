@@ -6,18 +6,18 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/nu
 unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 read -p "粘贴key在这里，最后记得按回车确认，先请各位按下Ctrl + V来粘贴在ngrok网站中所复制的Authtoken: " CRP 
 ./ngrok authtoken $CRP 
-nohup ./ngrok tcp 3389 &>/dev/null &
+nohup ./ngrok tcp 3387 &>/dev/null &
 echo 三天两头跟着老罗叔叔一起薅羊毛是不是感觉很爽？：）
 apt-get install qemu-system-x86 -y
 echo "这个时候去厨房倒点水喝喝，多喝水有益健康哦~"
 echo "开始轮到咱们中文版的Windows发功了！~"
-qemu-system-x86_64 -hda win7.img -m 4G -smp cores=4 -net user,hostfwd=tcp::3388-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic &>/dev/null &
+qemu-system-x86_64 -hda win7.img -m 4G -smp cores=4 -net user,hostfwd=tcp::3387-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic &>/dev/null &
 clear
 echo 请复制这个远程桌面RDP登录地址:
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "===================================="
 echo "用户名: Administrator"
-echo "密码: uncleluo"
+echo "密码: uncle"
 echo "===================================="
 echo "===================================="
 echo "感谢您持续关注+-Uncle LUO老罗叔叔的数字化生活-+YouTube频道"
