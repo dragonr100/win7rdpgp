@@ -17,7 +17,7 @@ echo 请复制这个远程桌面RDP登录地址:
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "===================================="
 echo "用户名: Administrator"
-echo "密码: uncle"
+echo "密码: uncleluo"
 echo "===================================="
 echo "===================================="
 echo "感谢您持续关注+-Uncle LUO老罗叔叔的数字化生活-+YouTube频道"
